@@ -1,0 +1,1745 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101004002027)
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "pseudo" character varying(255), "firstname" character varying(255), "lastname" character varying(255), "email" character varying(255), "role" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'ahe', E'Anthony', E'Heukmes', E'ahe@ahe.be', E'admin', '2010-10-04 00:25:37.455521', '2010-10-04 00:25:37.455521') RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'willd', E'Wilfried', E'Dalmat', E'willd@ahe.be', E'middlefielder', '2010-10-04 00:25:37.547101', '2010-10-04 00:25:37.547101') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'marcos', E'Marcos', E'Camozzato', E'marcos@ahe.be', E'defender', '2010-10-04 00:25:37.548019', '2010-10-04 00:25:37.548019') RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'onyewuo', E'Ogushi', E'Onyewu', E'onyewuo@ahe.be', E'defender', '2010-10-04 00:25:37.548859', '2010-10-04 00:25:37.548859') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'sarrm', E'Momo', E'Sarr', E'sarrm@ahe.be', E'defender', '2010-10-04 00:25:37.549665', '2010-10-04 00:25:37.549665') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'mulemol', E'Landry', E'Mulemo', E'mulemol@ahe.be', E'defender', '2010-10-04 00:25:37.550515', '2010-10-04 00:25:37.550515') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'witsela', E'Axel', E'Witsel', E'witsela@ahe.be', E'middlefielder', '2010-10-04 00:25:37.551335', '2010-10-04 00:25:37.551335') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'defours', E'Steven', E'Defour', E'defours@ahe.be', E'middlefielder', '2010-10-04 00:25:37.552145', '2010-10-04 00:25:37.552145') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'goreuxr', E'Reginal', E'Goreux', E'goureux@ahe.be', E'middlefielder', '2010-10-04 00:25:37.552954', '2010-10-04 00:25:37.552954') RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'jova', E'Milan', E'Jovanovic', E'jova@ahe.be', E'striker', '2010-10-04 00:25:37.553814', '2010-10-04 00:25:37.553814') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'decamar', E'Igor', E'De Camargo', E'decamar@ahe.be', E'striker', '2010-10-04 00:25:37.554684', '2010-10-04 00:25:37.554684') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'mbokani', E'Dieumerci', E'Mbokani', E'mbokani@ahe.be', E'striker', '2010-10-04 00:25:37.555492', '2010-10-04 00:25:37.555492') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'nicaise', E'Benjamin', E'Nicaise', E'nicaise@ahe.be', E'middlefielder', '2010-10-04 00:25:37.556320', '2010-10-04 00:25:37.556320') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'bolats', E'Sinan', E'Bolat', E'bolats@ahe.be', E'goalkeeper', '2010-10-04 00:25:37.557113', '2010-10-04 00:25:37.557113') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'leonb', E'Leon', E'Benko', E'leonb@ahe.be', E'striker', '2010-10-04 00:25:37.557928', '2010-10-04 00:25:37.557928') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'espi', E'Aragon', E'Espinoza', E'espi@ahe.be', E'goalkeeper', '2010-10-04 00:25:37.558727', '2010-10-04 00:25:37.558727') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'carce', E'Medhi', E'Carcela', E'carce@ahe.be', E'middlefielder', '2010-10-04 00:25:37.559521', '2010-10-04 00:25:37.559521') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'manga', E'Eliaquim', E'Mangala', E'manga@ahe.be', E'middlefielder', '2010-10-04 00:25:37.560297', '2010-10-04 00:25:37.560297') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'miku', E'Tomislav', E'Mikulic', E'miku@ahe.be', E'defender', '2010-10-04 00:25:37.561218', '2010-10-04 00:25:37.561218') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'maestro', E'Segio', E'Conceicao', E'maestro@ahe.be', E'middlefielder', '2010-10-04 00:25:37.562150', '2010-10-04 00:25:37.562150') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'bolo', E'Laszlo', E'Boloni', E'bolo@ahe.be', E'trainer', '2010-10-04 00:25:37.562949', '2010-10-04 00:25:37.562949') RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'pesto', E'Joaquim', E'Preto', E'ahe@ahe.be', E'trainer', '2010-10-04 00:25:37.563748', '2010-10-04 00:25:37.563748') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'pf', E'Pierre', E'Francois', E'pf@ahe.be', E'admin', '2010-10-04 00:25:37.564535', '2010-10-04 00:25:37.564535') RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "users" ("pseudo", "firstname", "lastname", "email", "role", "created_at", "updated_at") VALUES(E'moi', E'Moi', E'Moi', E'moi@ahe.be', E'striker', '2010-10-04 00:25:37.565321', '2010-10-04 00:25:37.565321') RETURNING "id"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101004002027')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:34:04) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 32ms (View: 27, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:36:04) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:48:46) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 42ms (View: 37, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:48:46) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153326532", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+
+NoMethodError (undefined method `total_entries' for #<Array:0x99cf988>):
+  app/controllers/users_controller.rb:21:in `block (2 levels) in index'
+  app/controllers/users_controller.rb:18:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (45.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:51:05) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 41ms (View: 36, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:51:05) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153465955", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+
+NoMethodError (undefined method `total_entries' for #<Array:0x9369454>):
+  app/controllers/users_controller.rb:21:in `block (2 levels) in index'
+  app/controllers/users_controller.rb:18:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:54:11) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 41ms (View: 36, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:54:11) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153651414", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 17ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286153651414&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:54:24) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153664510", "rows"=>"10", "page"=>"2", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286153664510&rows=10&page=2&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:55:18) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 42ms (View: 36, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:55:18) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153718850", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 20ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286153718850&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:56:15) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 35ms (View: 31, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:56:15) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153775947", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286153775947&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:56:26) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153785997", "rows"=>"10", "page"=>"2", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286153785997&rows=10&page=2&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:57:39) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286153859730", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "pseudo"=>"wild"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286153859730&rows=10&page=1&sidx=&sord=&pseudo=wild]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:57:47) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286153867474", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "pseudo"=>"willd"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 30ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286153867474&rows=10&page=1&sidx=&sord=&pseudo=willd]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:58:17) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286153897473", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286153897473&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:58:26) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286153906753", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286153906753&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 20:58:52) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286153932231", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286153932231&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:15) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154075162", "rows"=>"10", "page"=>"3", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154075162&rows=10&page=3&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:21) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154081748", "rows"=>"100", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154081748&rows=100&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154113068", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"asc", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154113068&rows=100&page=1&sidx=firstname&sord=asc&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154113933", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"desc", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154113933&rows=100&page=1&sidx=firstname&sord=desc&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:54) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154114629", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"asc", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154114629&rows=100&page=1&sidx=firstname&sord=asc&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:57) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154116995", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"desc", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154116995&rows=100&page=1&sidx=firstname&sord=desc&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:58) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154118034", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"asc", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154118034&rows=100&page=1&sidx=firstname&sord=asc&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:01:58) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154118854", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"desc", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154118854&rows=100&page=1&sidx=firstname&sord=desc&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:02:00) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154120644", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"asc", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154120644&rows=100&page=1&sidx=firstname&sord=asc&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:02:01) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154121292", "rows"=>"100", "page"=>"1", "sidx"=>"firstname", "sord"=>"desc", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154121292&rows=100&page=1&sidx=firstname&sord=desc&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:02:03) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154123443", "rows"=>"100", "page"=>"1", "sidx"=>"lastname", "sord"=>"asc", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154123443&rows=100&page=1&sidx=lastname&sord=asc&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:02:03) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154123949", "rows"=>"100", "page"=>"1", "sidx"=>"lastname", "sord"=>"desc", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154123949&rows=100&page=1&sidx=lastname&sord=desc&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:04:59) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 61ms (View: 55, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:05:00) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286154300306", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 22ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286154300306&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:05:13) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154313791", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154313791&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:05:50) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:05:50) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286154350763", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 23ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286154350763&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:06:28) [GET]
+
+TypeError (can't convert nil into String):
+  app/controllers/users_controller.rb:7:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:07:26) [GET]
+
+TypeError (can't convert nil into String):
+  app/controllers/users_controller.rb:7:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (39.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:07:32) [GET]
+
+TypeError (can't convert nil into String):
+  app/controllers/users_controller.rb:7:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (37.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:09:58) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:09:59) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286154599073", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286154599073&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:10:40) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:10:40) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286154640645", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 21ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286154640645&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:15:36) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154936382", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154936382&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:16:23) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286154983629", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286154983629&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:17:25) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286155045917", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286155045917&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:17:33) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286155053293", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 34ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286155053293&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:18:49) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286155129389", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286155129389&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:18:55) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286155135101", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286155135101&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:23:44) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286155424429", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286155424429&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:23:54) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:23:54) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286155434635", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286155434635&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:24:05) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 42ms (View: 37, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:24:05) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286155445937", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286155445937&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 21:24:22) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286155462589", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286155462589&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:31:32) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 42ms (View: 39, DB: 0) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:31:32) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286163092460", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+
+NoMethodError (undefined method `to_jqgrid_json' for #<Class:0x9a4d914>):
+  app/controllers/users_controller.rb:37:in `block (2 levels) in index'
+  app/controllers/users_controller.rb:35:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (48.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:41:46) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:41:46) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286163706847", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+
+NoMethodError (undefined method `to_jqgrid_json' for #<Class:0xb44ef98>):
+  app/controllers/users_controller.rb:38:in `block (2 levels) in index'
+  app/controllers/users_controller.rb:36:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (47.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:42:57) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+NameError (uninitialized constant UsersController::Users):
+  app/controllers/users_controller.rb:16:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (39.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:43:15) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:43:15) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286163795671", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 35ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286163795671&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:43:28) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286163808592", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286163808592&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:46:52) [GET]
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+
+NameError (undefined local variable or method `users' for #<UsersController:0xb2a1524>):
+  app/controllers/users_controller.rb:16:in `block in index'
+  app/controllers/users_controller.rb:16:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (66.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:14) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:15) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164035034", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 21ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164035034&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:23) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164043200", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164043200&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:32) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164052102", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164052102&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:33) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164053053", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164053053&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:33) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164053561", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 9ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164053561&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:34) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164054014", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164054014&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:47:34) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164054452", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164054452&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:48:06) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164086703", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony", "id"=>"5"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164086703&rows=10&page=1&sidx=&sord=&firstname=Anthony&id=5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:48:11) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164091103", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164091103&rows=10&page=1&sidx=&sord=&id=5]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:48:18) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164098111", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164098111&rows=10&page=1&sidx=&sord=&id=5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:48:23) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164103423", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164103423&rows=10&page=1&sidx=&sord=&id=5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:08) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164148322", "rows"=>"100", "page"=>"1", "sidx"=>"lastname", "sord"=>"desc", "firstname"=>"Anthony", "id"=>"5"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ((firstname LIKE E'%Anthony') AND (pseudo LIKE E'%5')) [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164148322&rows=100&page=1&sidx=lastname&sord=desc&firstname=Anthony&id=5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:10) [GET]
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 8ms (View: 2, DB: 2) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:10) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164150880", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164150880&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:14) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164154498", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE (pseudo LIKE E'%5') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 6ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164154498&rows=10&page=1&sidx=&sord=&id=5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:38) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:38) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164178275", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 13ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164178275&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:42) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164182159", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (pseudo = E'%5') [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 8ms (View: 1, DB: 3) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164182159&rows=10&page=1&sidx=&sord=&id=5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:49:43) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164183631", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (pseudo = E'%5') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 7ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164183631&rows=10&page=1&sidx=&sord=&id=5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:50:14) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:50:14) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164214377", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (12.8ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 23ms (View: 1, DB: 13) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164214377&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:50:18) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164218527", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE (pseudo = E'5') [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 32ms (View: 0, DB: 3) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164218527&rows=10&page=1&sidx=&sord=&id=5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:50:51) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:50:51) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164251798", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (6.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 21ms (View: 0, DB: 6) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164251798&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:50:55) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164255023", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "id"=>"5"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (id = E'5') [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164255023&rows=10&page=1&sidx=&sord=&id=5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:52:12) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164332799", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 11ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164332799&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-03 23:57:26) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286164646335", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "pseudo"=>"willd"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286164646335&rows=10&page=1&sidx=&sord=&pseudo=willd]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:01:09) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:01:09) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286164869791", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286164869791&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:03:52) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:03:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165033141", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 23ms (View: 5, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165033141&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:03:58) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:03:58) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165038492", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 23ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165038492&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:03:59) [GET]
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:04:00) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165040017", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 14ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165040017&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:04:20) [GET]
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:04:20) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165060923", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 25ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165060923&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:05:31) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:05:32) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165132279", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 14ms (View: 1, DB: 3) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165132279&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:05:58) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165158822", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165158822&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:06:08) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:06:08) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165168699", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 18ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165168699&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:10:13) [GET]
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:10:13) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165413952", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 28ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165413952&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:10:30) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:10:31) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165431122", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165431122&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:10:46) [GET]
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 15ms (View: 8, DB: 3) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:10:46) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165446680", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 23ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165446680&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:14:46) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:14:47) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165687149", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 21ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165687149&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:14:55) [GET]
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:14:55) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165695933", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165695933&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:15:16) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:15:16) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165716264", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (5.9ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 21ms (View: 1, DB: 6) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165716264&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:18:44) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:18:44) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286165924824", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 15ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286165924824&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:23:20) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:23:21) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286166201171", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 46ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286166201171&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:23:27) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286166207972", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "pseudo"=>"ahe"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286166207972&rows=10&page=1&sidx=&sord=&pseudo=ahe]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:23:34) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286166214044", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286166214044&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IN (5)) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IN (5)) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IN (5,6)) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 30 OFFSET 0[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:48:34) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 64ms (View: 56, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:48:34) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167714914", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 19ms (View: 1, DB: 3) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167714914&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:49:56) [GET]
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:49:57) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167797126", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167797126&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:49:59) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167799003", "rows"=>"10", "page"=>"2", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 10[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167799003&rows=10&page=2&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:00) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167800206", "rows"=>"10", "page"=>"3", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 20[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167800206&rows=10&page=3&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:14) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167814730", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167814730&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:22) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167822472", "rows"=>"100", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" LIMIT 100 OFFSET 0[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167822472&rows=100&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:34) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167834933", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167834933&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:41) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167841121", "rows"=>"25", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 25 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167841121&rows=25&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:43) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167843051", "rows"=>"50", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167843051&rows=50&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:50) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167850405", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"asc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167850405&rows=50&page=1&sidx=role&sord=asc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:51) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167851240", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167851240&rows=50&page=1&sidx=role&sord=desc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:51) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167851896", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"asc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167851896&rows=50&page=1&sidx=role&sord=asc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:52) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167852193", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 15ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167852193&rows=50&page=1&sidx=role&sord=desc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:52) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167852365", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"asc"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167852365&rows=50&page=1&sidx=role&sord=asc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:52) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167852536", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167852536&rows=50&page=1&sidx=role&sord=desc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:52) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167852700", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"asc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167852700&rows=50&page=1&sidx=role&sord=asc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:52) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167852865", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167852865&rows=50&page=1&sidx=role&sord=desc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167853044", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"asc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167853044&rows=50&page=1&sidx=role&sord=asc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167853216", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167853216&rows=50&page=1&sidx=role&sord=desc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167853380", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"asc"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167853380&rows=50&page=1&sidx=role&sord=asc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:50:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286167853552", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286167853552&rows=50&page=1&sidx=role&sord=desc]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:53:09) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286167989146", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc", "pseudo"=>"a"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286167989146&rows=50&page=1&sidx=role&sord=desc&pseudo=a]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:53:14) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286167994217", "rows"=>"50", "page"=>"1", "sidx"=>"role", "sord"=>"desc", "pseudo"=>"ahe"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 50 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 11ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286167994217&rows=50&page=1&sidx=role&sord=desc&pseudo=ahe]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:53:22) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:53:23) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168003214", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 23ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168003214&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:53:28) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168008010", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "pseudo"=>"ahe"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 11ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168008010&rows=10&page=1&sidx=&sord=&pseudo=ahe]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:54:13) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:54:13) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168053321", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (2.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 22ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168053321&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:54:16) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168056473", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "pseudo"=>"ahe"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168056473&rows=10&page=1&sidx=&sord=&pseudo=ahe]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:54:29) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 2) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:54:29) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168069230", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 22ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168069230&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:54:36) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168076810", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"A"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%A') LIMIT 10 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 6ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168076810&rows=10&page=1&sidx=&sord=&firstname=A]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:54:42) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168082185", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"A"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%A') LIMIT 10 OFFSET 0[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 6ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168082185&rows=10&page=1&sidx=&sord=&firstname=A]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:55:21) [GET]
+Rendering template within layouts/users
+Rendering users/index
+Completed in 28ms (View: 25, DB: 0) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:55:21) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168121287", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 9ms (View: 1, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168121287&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:55:34) [GET]
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:55:34) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168134361", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 39ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168134361&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:55:50) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168150672", "rows"=>"10", "page"=>"2", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 10[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 10ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168150672&rows=10&page=2&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:56:53) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:56:53) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168213838", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (5.2ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+Completed in 30ms (View: 1, DB: 6) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168213838&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:03) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168223593", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') LIMIT 10 OFFSET 0[0m
+Completed in 8ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168223593&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:10) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168230073", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+Completed in 9ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168230073&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:12) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168232409", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"A"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%A') LIMIT 10 OFFSET 0[0m
+Completed in 6ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168232409&rows=10&page=1&sidx=&sord=&firstname=A]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:15) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168235161", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"A"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%A') LIMIT 10 OFFSET 0[0m
+Completed in 5ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168235161&rows=10&page=1&sidx=&sord=&firstname=A]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:19) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168239513", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anth"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%Anth') LIMIT 10 OFFSET 0[0m
+Completed in 5ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168239513&rows=10&page=1&sidx=&sord=&firstname=Anth]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:22) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168242825", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anth"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anth') LIMIT 10 OFFSET 0[0m
+Completed in 5ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168242825&rows=10&page=1&sidx=&sord=&firstname=Anth]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:24) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168244441", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Antho"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%Antho') LIMIT 10 OFFSET 0[0m
+Completed in 5ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168244441&rows=10&page=1&sidx=&sord=&firstname=Antho]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:25) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168245257", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthon"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthon') LIMIT 10 OFFSET 0[0m
+Completed in 5ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168245257&rows=10&page=1&sidx=&sord=&firstname=Anthon]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:26) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168246073", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"Anthony"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%Anthony') LIMIT 10 OFFSET 0[0m
+Completed in 8ms (View: 0, DB: 1) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168246073&rows=10&page=1&sidx=&sord=&firstname=Anthony]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:50) [GET]
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 2, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:50) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168270843", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+Completed in 22ms (View: 1, DB: 5) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168270843&rows=10&page=1&sidx=&sord=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:57:54) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168274233", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"A"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (firstname LIKE E'%A%') LIMIT 10 OFFSET 0[0m
+Completed in 8ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168274233&rows=10&page=1&sidx=&sord=&firstname=A]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:58:02) [GET]
+  Parameters: {"q"=>"1", "_search"=>"false", "nd"=>"1286168282393", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>""}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+Completed in 9ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=false&nd=1286168282393&rows=10&page=1&sidx=&sord=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-04 00:58:04) [GET]
+  Parameters: {"q"=>"1", "_search"=>"true", "nd"=>"1286168284953", "rows"=>"10", "page"=>"1", "sidx"=>"", "sord"=>"", "firstname"=>"La"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE (firstname LIKE E'%La%') LIMIT 10 OFFSET 0[0m
+Completed in 8ms (View: 0, DB: 2) | 200 OK [http://localhost/users?q=1&_search=true&nd=1286168284953&rows=10&page=1&sidx=&sord=&firstname=La]
